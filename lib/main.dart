@@ -38,19 +38,26 @@ class MyApp extends StatelessWidget {
                 children: transactions.map((tx) {
                   return Card(
                       child: Row(
-                        children: [
-                          Container(
-                            child: Text(tx.amount.toString()),
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 15,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2,
                           ),
-                          Column(
-                            children: [
-                              Text(tx.title),
-                              Text(tx.date.toString())
-                            ],
-                          )
-                        ],
+                        ),
+                        padding: EdgeInsets.all(10),
+                        child: Text(tx.amount.toString()),
+                      ),
+                      Column(
+                        children: [Text(tx.title), Text(tx.date.toString())],
                       )
-                  );
+                    ],
+                  ));
                 }).toList(),
               )
             ],
