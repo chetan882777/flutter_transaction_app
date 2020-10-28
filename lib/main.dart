@@ -6,10 +6,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   final List<Transactions> transactions = [
-    Transactions(id: 't1', title: 'New SHoes', amount: 69.99, date: DateTime.now()),
-    Transactions(id: 't2', title: 'Weekly groceries', amount: 15.49, date: DateTime.now())
+    Transactions(
+        id: 't1', title: 'New SHoes', amount: 69.99, date: DateTime.now()),
+    Transactions(
+        id: 't2',
+        title: 'Weekly groceries',
+        amount: 15.49,
+        date: DateTime.now())
   ];
 
   @override
@@ -30,9 +34,11 @@ class MyApp extends StatelessWidget {
                   child: Text("Top card"),
                 ),
               ),
-              Card(
-                child: Text("Botton Card"),
-              ),
+              Column(
+                children: transactions.map((tx) {
+                  return Card(child: Text(tx.title));
+                }).toList(),
+              )
             ],
           ),
         ),
