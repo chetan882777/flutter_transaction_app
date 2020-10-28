@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter App',
+      theme: ThemeData(
+        primarySwatch: Colors.purple
+      ),
       home: MyHomePage(),
     );
   }
@@ -60,9 +63,7 @@ class _MyAppState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text("Transactions"),
           actions: [
@@ -95,7 +96,6 @@ class _MyAppState extends State<MyHomePage> {
             _startAddNewTransaction(context);
           },
         ),
-      ),
     );
   }
 }
