@@ -44,6 +44,7 @@ class _MyAppState extends State<MyHomePage> {
 
     setState(() {
       _userTransactions.add(tx);
+      Navigator.of(context).pop();
     });
   }
 
